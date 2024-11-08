@@ -1,11 +1,17 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Card from "./Componets/Card";
 
 function App() {
   return (
-    <>
-      <Card/>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Cart />
+      <Card />
+      <Routes>
+        <Route element={} path=""/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
