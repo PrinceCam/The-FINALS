@@ -1,6 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Card from "./Componets/Card";
+import NavBar from "./Componets/NavBar"
+
+
 
 function App() {
   return (
@@ -9,7 +12,7 @@ function App() {
       <Cart />
       <Card />
       <Routes>
-        <Route element={} path=""/>
+        <Route/>
       </Routes>
     </BrowserRouter>
   );
