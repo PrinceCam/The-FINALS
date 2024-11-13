@@ -1,0 +1,68 @@
+The Process.
+**_ DO NOT forget to always check the docs and the project docs_**
+
+Pre Setup -- We need a github repository!
+-- Read through Project Docs!
+
+1.) What library do I want to use?
+React + Vite
+
+2.) How do I install that?
+npm create vite@latest
+React + Javascript
+cd into Project
+npm Install
+npm run dev to test
+
+**_ DONT FORGET TO CLEAN OUT THE App.jsx, index.css, and App.css _**
+
+3.) DO my Init commit(initial Commit)
+I notice there are u's by my file and folder names
+That means they are untracked by git-- the cloud version of my project isnt the same as my computer version
+
+    *** Do Git Commands ***
+      git add .
+      git commit -m "init commit"
+      git push
+
+4.) Do I need components? Absolutely!
+add a components folder
+Is there a library of premade components I could use? Yes! MaterialUI
+How do I get the library? npm install @mui/material @emotion/react @emotion/styled
+ProductList -- Home page
+ProductDetails -- Shows details of Product
+Cart -- cart to track thing a user buys
+Navbar -- button to take me back to home
+
+5.) Is there any Navigation on my Page? Yes!
+Use react-router-dom to navigate between pages
+Gotta look that up
+
+6.) Do I need to track state? Yes!
+Local Component State or Global State?
+Well, is there multiple components that need 1 given state? Yes
+Global State! Because a few of my components need the same state variable.
+Global state means we will be using React Context or equivalent.
+I should call my apis in the global state.
+
+7.) Is there an API I need to call? Always!
+Product List (20 products): https://fakestoreapi.com/products
+Product Details by ID: https://fakestoreapi.com/products/{id}
+
+**_ React Router Dom Notes _**
+
+In order to set up a router to navigate pages within our React Project we must use React Router Dom.
+
+We install it by using the npm package --- npm install react-router-dom
+
+We will be creating a navigation hub in our App.jsx. We need three things to create a router --- Router, Routes, Route Components from react-router-dom.
+We will be using the BrowserRouter for our Router. There can be only 1 router in our project. Every router has Routes, every Routes have individual route components. The outer most component must be our Router component(BrowserRouter)
+
+BroswerRouter -- Opening and Closing tags
+Routes -- Opening and Closing tags
+Route -- self-closing
+
+The Route component needs the following Properties:
+
+- path="/url"
+- element={componentToRender}

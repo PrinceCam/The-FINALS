@@ -1,4 +1,4 @@
-const ProductList = async () => {
+const getProduct = async () => {
     try {
         const res = await fetch("https://fakestoreapi.com/products")
         return res.json()
@@ -6,5 +6,4 @@ const ProductList = async () => {
         console.error(error)
     }console.log(res)
 }
-ProductList()
-export  {ProductList}
+export  {getProduct}

@@ -1,21 +1,33 @@
-import { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProductDetailsById } from "../utils/apis";
+import { Box, Button } from "@mui/material";
 
-// in order to use the context I create I must import the context and import the useContext hook from react
-const ProductList = () => {
-  // when you want to pull something from the global state context you just use object destructuring.
-  //  when you call the useContext hook you need to pass it a context to use.
-  const { products } = useContext(ProductContext);
+const ProductDetails = () => {
+  const [productDetails, setProductDetails] = useState({});
 
-  //   we need to map over products and list out the price, title, photo and rating
+  const { id } = useParams();
+
+  useEffect(() => {
+    getProductDetailsById(id).then((res) => {
+      console.log(res);
+      setProductDetails(res);
+    });
+  }, []);
+
   return (
-    <div>
-      {products.map((item) => {
-        // I would use a card here to display the different thing in the object
-        return <div>{item.title}</div>;
-      })}
-    </div>
+    <Box display="flex" justifyContent="space-around" sx={{ height: "100vh" }}>
+      <Box sx={{ height: "100vh", width: "50%" }}>
+        <img src={productDetails.image} />
+      </Box>
+      <Box sx={{ p: 5 }}>
+        <p>{productDetails.title}</p>
+        <p>{productDetails.price}</p>
+        <p>{productDetails.description}</p>
+        <Button>Add to Cart</Button>
+      </Box>
+    </Box>
   );
 };
 
-export default ProductList;
+export default ProductDetails;

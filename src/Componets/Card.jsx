@@ -1,6 +1,7 @@
 // product cards function
 import { useState,useEffect } from 'react'
-import { ProductList } from '../utils/product'
+import ProductList from './ProductList'
+
 const Card= () => {
     const [product, setProduct] = useState([])
   useEffect(() => {
