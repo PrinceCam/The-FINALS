@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from "react";
-import { getProducts } from "../utils/apis";
+import { getProductList } from "../utils/products"; 
 
 // The first thing we need to do when creating a Context Global State is use the createContext() function form React to create it.
 const ProductContext = createContext();
@@ -13,7 +13,7 @@ const ProductProvider = ({ children }) => {
 //   We need to call out API function inside a useEffect to handle unwanted infinite loops
 // NOTE: Don't forget the Dependencies array!
   useEffect(() => {
-    getProducts().then((res) => {
+    getProductList().then((res) => {
       setProducts(res);
     });
   }, []);

@@ -13,7 +13,7 @@ export const CartProvider = ({ children }) => {
     // Initialize the cart as an empty array
     const [cart, setCart] = useState([]);
     // Add a product to the cart
-    const addToCart = (product) => {
+    const addToCart = (products) => {
         setCart((prevCart) => {
             // Check if product is already in the cart
             const existingProduct = prevCart.find(item => item.id === product.id);
@@ -24,7 +24,7 @@ export const CartProvider = ({ children }) => {
                 );
             }
             // If product is not in cart, add it
-            return [...prevCart, { ...product, quantity: 1 }];
+            return [...prevCart, { ...products, quantity: 1 }];
         });
     };
 
