@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { ProductContext } from '../context/ProductContext'
-//import { ProductContext } from '../context/ProductContext'
 import { useNavigate } from 'react-router-dom'
 import truncateString from '../utils/truncateString'
 import { Box } from "@mui/material"

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProductDetailsById } from "../utils/products";
 import { Box, Button } from "@mui/material";
+
 const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState({});
-
   const { id } = useParams();
 
   useEffect(() => {
